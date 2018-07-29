@@ -1,0 +1,11 @@
+# ignore logs and generated files
+*.log
+
+# ignore compiled object files and logs from Projects/x/x/Debug/
+Projects/**/Debug
+
+# ignore eclipse .metadata folder
+Projects/.metadata
+
+# ignore RemoteSystemsTempFiles
+Projects/RemoteSystemsTempFiles
