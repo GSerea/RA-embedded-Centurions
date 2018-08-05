@@ -1,0 +1,1 @@
+Common clock initializations are performed. 
