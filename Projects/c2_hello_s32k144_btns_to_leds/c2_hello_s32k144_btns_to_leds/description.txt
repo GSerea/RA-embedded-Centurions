@@ -1,0 +1,2 @@
+Minimal bring up. Exercises GPIO.
+Extension of sample project to turn on green and blue LEDs if one or the other button is pressed or red LED if both buttons are pressed.
