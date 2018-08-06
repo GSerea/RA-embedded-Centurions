@@ -35,6 +35,18 @@ typedef struct {
 /** Array initializer of WDOG peripheral base pointers */
 #define WDOG_BASE_PTRS                           { WDOG }
 
+/***************************************** GPIO related *****************************************/
 
+#define GPIO_BASE 	(0x400FF000)   						/* GPIO base address */
+
+
+#define PORT_C		((uint32_t *)(GPIO_BASE + 0x80))	/* PORT C address */
+#define PTC12		(12U)								/* Button 1 position */
+
+#define PORT_D		((uint32_t *)(GPIO_BASE + 0xC0))	/* PORT D address */
+#define PTD15		(15U)								/* Red LED position */
+
+#define BTN_1		((uint32_t *)(1<<PTC12))			/* Button 1 bitmask */
+#define LED_RED		((uint32_t *)(1<<PTD15))			/* Red LED bitmask */
 
 #endif /* EMBEDDED101_H_ */
