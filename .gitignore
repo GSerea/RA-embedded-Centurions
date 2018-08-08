@@ -69,9 +69,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
-#Microsoft file
-*.xls
-*.doc
-*.ppt
-

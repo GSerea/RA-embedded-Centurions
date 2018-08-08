@@ -17,8 +17,38 @@ int main(void) {
   int counter = 0;
   WDOG_disable();             /* Disable Watchdog in case it is not done in startup code */
 
+
+  GPIO_map_tp PORTC = (GPIO_map_tp) PORT_C;
+
+  PORTC->PCC = PCC_PORT_C;
+
   for(;;) {
 
     counter++;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

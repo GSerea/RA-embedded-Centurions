@@ -39,14 +39,62 @@ typedef struct {
 
 #define GPIO_BASE 	(0x400FF000)   						/* GPIO base address */
 
-
+#define PORT_A		((uint32_t *)(GPIO_BASE + 0x00))	/* PORT A address */
+#define PORT_B		((uint32_t *)(GPIO_BASE + 0x40))	/* PORT B address */
 #define PORT_C		((uint32_t *)(GPIO_BASE + 0x80))	/* PORT C address */
-#define PTC12		(12U)								/* Button 1 position */
-
 #define PORT_D		((uint32_t *)(GPIO_BASE + 0xC0))	/* PORT D address */
+#define PORT_E		((uint32_t *)(GPIO_BASE + 0x100))	/* PORT E address */
+
+
+
+#define PTC12		(12U)								/* Button 1 position */
 #define PTD15		(15U)								/* Red LED position */
 
 #define BTN_1		((uint32_t *)(1<<PTC12))			/* Button 1 bitmask */
 #define LED_RED		((uint32_t *)(1<<PTD15))			/* Red LED bitmask */
+
+
+typedef struct {
+	volatile uint32_t PDOR;
+	volatile uint32_t PSOR;
+	volatile uint32_t PCOR;
+	volatile uint32_t PTOR;
+	volatile uint32_t PDIR;
+	volatile uint32_t PDDR;
+	volatile uint32_t PIDR;
+	volatile uint32_t * PCC;
+} GPIO_map_t, *GPIO_map_tp;
+
+
+
+/*********** PCC *******************/
+#define PCC_BASE 		(0x40065000)   						/* PCC base address */
+
+#define PCC_PORT_A		((uint32_t *)(PCC_BASE + 0x124))	/* PCC PORT A address */
+#define PCC_PORT_B		((uint32_t *)(PCC_BASE + 0x128))	/* PCC PORT B address */
+#define PCC_PORT_C		((uint32_t *)(PCC_BASE + 0x12C))	/* PCC PORT C address */
+#define PCC_PORT_D		((uint32_t *)(PCC_BASE + 0x130))	/* PCC PORT D address */
+#define PCC_PORT_E		((uint32_t *)(PCC_BASE + 0x134))	/* PCC PORT E address */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif /* EMBEDDED101_H_ */
