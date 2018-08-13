@@ -37,7 +37,7 @@ typedef struct {
 
 /***************************************** GPIO related *****************************************/
 
-#define GPIO_BASE 	(0x400FF000)   						/* GPIO base address */
+#define GPIO_BASE 	(0x400FF000)   		/* GPIO base address */
 
 #define PORT_A		((uint32_t *)(GPIO_BASE + 0x00))	/* PORT A address */
 #define PORT_B		((uint32_t *)(GPIO_BASE + 0x40))	/* PORT B address */
@@ -50,8 +50,8 @@ typedef struct {
 #define PTC12		(12U)								/* Button 1 position */
 #define PTD15		(15U)								/* Red LED position */
 
-#define BTN_1		((uint32_t *)(1<<PTC12))			/* Button 1 bitmask */
-#define LED_RED		((uint32_t *)(1<<PTD15))			/* Red LED bitmask */
+#define BTN_1		((uint32_t)(1<<PTC12))				/* Button 1 bitmask */
+#define LED_RED		((uint32_t)(1<<PTD15))				/* Red LED bitmask */
 
 
 typedef struct {
@@ -68,16 +68,22 @@ typedef struct {
 
 
 /*********** PCC *******************/
-#define PCC_BASE 		(0x40065000)   						/* PCC base address */
+#define PCC_BASE 		(0x40065000u)   		/* PCC base address */
 
-#define PCC_PORT_A		((uint32_t *)(PCC_BASE + 0x124))	/* PCC PORT A address */
-#define PCC_PORT_B		((uint32_t *)(PCC_BASE + 0x128))	/* PCC PORT B address */
-#define PCC_PORT_C		((uint32_t *)(PCC_BASE + 0x12C))	/* PCC PORT C address */
-#define PCC_PORT_D		((uint32_t *)(PCC_BASE + 0x130))	/* PCC PORT D address */
-#define PCC_PORT_E		((uint32_t *)(PCC_BASE + 0x134))	/* PCC PORT E address */
+#define PCC_PORT_A		((uint32_t *)(PCC_BASE + 0x124u))	/* PCC PORT A address */
+#define PCC_PORT_B		((uint32_t *)(PCC_BASE + 0x128u))	/* PCC PORT B address */
+#define PCC_PORT_C		((uint32_t *)(PCC_BASE + 0x12Cu))	/* PCC PORT C address */
+#define PCC_PORT_D		((uint32_t *)(PCC_BASE + 0x130u))	/* PCC PORT D address */
+#define PCC_PORT_E		((uint32_t *)(PCC_BASE + 0x134u))	/* PCC PORT E address */
 
+#define PCC_ENABLE_PORT_MASK		(1u << 30)
 
+/*********** PCR - Port Control Register *******************/
+#define PCR_PORT_D		((uint32_t *)(0x4004C000))	/* PCC PORT C address */
 
+#define PCR_GPIO_MODE_MASK		(1 << 8)
+
+/*********** PCC *******************/
 
 
 
