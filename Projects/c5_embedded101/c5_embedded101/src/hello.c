@@ -34,10 +34,65 @@ int main(void) {
   // 4) Turn on LED
   ((GPIO_map_tp) PORT_D)->PCOR |= LED_RED;
 
+  //5)Turn off LED
+  ((GPIO_map_tp) PORT_D)->PSOR |= LED_RED;
+
+
+  /*When you want to enable an input port
+   * 1)enable clock  --->PCC
+   * 2)pin direction --->PDDR
+   * 3)port function --->PCR
+   */
+
+  //1) Port clock control ---> enable
+  *(PCC_PORT_C) |= PCC_ENABLE_PORT_MASK;
+
+  //2)Pin Direction --->PDDR 0<<x
+  (((GPIO_map_tp) PORT_C)->PDDR) &= ~(1<<12U);
+
+  //3)Port function ---> PCR.Mux :001b=GPIO
+  PCR_PORT_C[12U] |= PCR_GPIO_MODE_MASK;
+
+
   for(;;) {
+
+	  ((GPIO_map_tp) PORT_D)->PSOR |= LED_RED;
+
+	  if((((GPIO_map_tp) PORT_C)->PDIR) & (1<<12))
+	  {
+		  ((GPIO_map_tp) PORT_D)->PCOR |= LED_RED;
+	  }
+
 
     counter++;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
 
 
 
