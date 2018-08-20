@@ -13,7 +13,7 @@ Projects/RemoteSystemsTempFiles
 # ignore project settings
 Projects/**/.project
 Projects/**/.cproject
-Projects/**/.settings
+Projects/**/.settings/language.settings.xml
 
 # Generic type follow below
 
