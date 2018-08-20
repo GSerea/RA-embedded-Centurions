@@ -48,10 +48,16 @@ typedef struct {
 
 
 #define PTC12		(12U)								/* Button 1 position */
+#define PTC13		(13U)								/* Button 2 position */
 #define PTD15		(15U)								/* Red LED position */
+#define PTD16		(16U)								/* Red LED position */
+#define PTD0		(0U)
 
 #define BTN_1		((uint32_t)(1<<PTC12))				/* Button 1 bitmask */
+#define BTN_2		((uint32_t)(1<<PTC13))				/* Button 1 bitmask */
 #define LED_RED		((uint32_t)(1<<PTD15))				/* Red LED bitmask */
+#define LED_BLUE	((uint32_t)(1<<PTD0))				/* BLUE LED bitmask */
+#define LED_GREEN	((uint32_t)(1<<PTD16))				/* GREEN LED bitmask */
 
 
 typedef struct {
