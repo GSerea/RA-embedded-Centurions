@@ -27,9 +27,13 @@ int main(void) {
 
   // 2) Pin Direction ---> PDDR 1 << x
   (((GPIO_map_tp) PORT_D)->PDDR) |= LED_RED;
+  (((GPIO_map_tp) PORT_D)->PDDR) |= LED_BLUE;
+  (((GPIO_map_tp) PORT_D)->PDDR) |= LED_GREEN;
 
   // 3) Port function ---> PCR.Mux : 001b = GPIO
   PCR_PORT_D[PTD15] |= PCR_GPIO_MODE_MASK;
+  PCR_PORT_D[PTD0] |= PCR_GPIO_MODE_MASK;
+  PCR_PORT_D[PTD16] |= PCR_GPIO_MODE_MASK;
 
   // 4) Turn on LED
   ((GPIO_map_tp) PORT_D)->PCOR |= LED_RED;
@@ -49,65 +53,36 @@ int main(void) {
 
   //2)Pin Direction --->PDDR 0<<x
   (((GPIO_map_tp) PORT_C)->PDDR) &= ~(1<<12U);
+  (((GPIO_map_tp) PORT_C)->PDDR) &= ~(1<<13U);
 
   //3)Port function ---> PCR.Mux :001b=GPIO
   PCR_PORT_C[12U] |= PCR_GPIO_MODE_MASK;
+  PCR_PORT_C[13U] |= PCR_GPIO_MODE_MASK;
 
 
   for(;;) {
 
 	  ((GPIO_map_tp) PORT_D)->PSOR |= LED_RED;
+	  ((GPIO_map_tp) PORT_D)->PSOR |= LED_BLUE;
+	  ((GPIO_map_tp) PORT_D)->PSOR |= LED_GREEN;
 
-	  if((((GPIO_map_tp) PORT_C)->PDIR) & (1<<12))
+	  if(((((GPIO_map_tp) PORT_C)->PDIR) & (1<<12)) && ((((GPIO_map_tp) PORT_C)->PDIR) & (1<<13)))
+	  {
+		  ((GPIO_map_tp) PORT_D)->PCOR |= LED_GREEN;
+	  }
+	  else if ((((GPIO_map_tp) PORT_C)->PDIR) & (1<<13))
+	  	  {
+	  		  ((GPIO_map_tp) PORT_D)->PCOR |= LED_BLUE;
+	  	  }
+	  else if ((((GPIO_map_tp) PORT_C)->PDIR) & (1<<12))
 	  {
 		  ((GPIO_map_tp) PORT_D)->PCOR |= LED_RED;
 	  }
 
 
+
     counter++;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
