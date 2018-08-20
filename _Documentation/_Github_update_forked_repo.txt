@@ -1,0 +1,62 @@
+# You first FORK the main branch so you will have a cloned repository to work with.
+# use the website for this.
+# You will then have a repository forked on your profile. You can normally work with
+# that repository until your feature/bugfix/enhancement is done.
+git status
+git add .
+git commit
+git push origin master
+
+# When you are done with the changes you can create a pull request to update the main branch.
+# You can use the website for this.
+
+##############################################################
+
+# The repository you have forked is called UPSTREAM. If changes are done to the upstream branch
+# and you want to bring those changes to your forked branch, then you need to do a merge from 
+# upstream to your branch.
+
+# First make sure you have no changed files (clean tree)
+git status
+
+# Then make sure you are on your master branch
+git checkout master
+
+# Now make sure you have properly configured the remote and upstream branches
+git remote -v
+
+# If you do not have them, you can add them with the GIT GUI or the Git bash 
+#    (Remote -> Add -> name "upstream" or "remote").
+# Again: the upstream is the main branch you forked from
+#        the remote is your github branch (forked)
+
+
+# Once you configure them, make sure to close Git bash and open a new one.
+# It does not update the environment variables....sadly :(
+# In the new Git bash you should see your upstream and remote repositories
+git remote -v
+
+# Good, now we can merge the changes from the upstream/master branch to our
+# local/master branch
+git fetch upstream master 
+git merge upstream/master
+
+# After the merge you may have conflicts. You can edit the files with your desired
+# text editor to resolve the conflicts.
+
+# Once you are conflict free, check the status:
+git status
+
+# Currently, from your remote branch's perspective you have some new changes, which
+# you need to commit.
+git add .
+git status
+git commit -m "Merged from upstream"
+
+# Now just update your remote branch
+git push origin master
+
+
+
+
+
