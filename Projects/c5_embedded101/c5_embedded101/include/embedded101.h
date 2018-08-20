@@ -2,7 +2,7 @@
  * embedded101.h
  *
  *  Created on: 6 Aug 2018
- *      Author: User
+ *      Author: Me
  */
 
 #ifndef EMBEDDED101_H_
