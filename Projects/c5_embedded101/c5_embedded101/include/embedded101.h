@@ -53,14 +53,6 @@ typedef struct {
 #define BTN_1		((uint32_t)(1<<PTC12))				/* Button 1 bitmask */
 #define LED_RED		((uint32_t)(1<<PTD15))				/* Red LED bitmask */
 
-#define PTC13		(13U)								/* Button 2 position */
-#define PTD0		(0U)								/* Blue LED position */
-
-#define BTN_2		((uint32_t)(1<<PTC13))				/* Button 2 bitmask */
-#define LED_BLUE	((uint32_t)(1<<PTD0))				/* Blue LED bitmask */
-
-#define PTD16		(16U)								/* Green LED position */
-#define LED_GREEN	((uint32_t)(1<<PTD16))				/* Green LED bitmask */
 
 typedef struct {
 	volatile uint32_t PDOR;
