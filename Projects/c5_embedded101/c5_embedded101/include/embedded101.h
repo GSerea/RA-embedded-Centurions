@@ -48,10 +48,16 @@ typedef struct {
 
 
 #define PTC12		(12U)								/* Button 1 position */
+#define PTC13 		(13U)								/* Button 2 bitmask */
+#define PTD0		(0u)								/* Blue LED position */
 #define PTD15		(15U)								/* Red LED position */
+#define PTD16		(16U)								/* Green LED position */
 
 #define BTN_1		((uint32_t)(1<<PTC12))				/* Button 1 bitmask */
+#define BTN_2 		((uint32_t)(1<<PTC13))				/* Button 2 bitmask */
 #define LED_RED		((uint32_t)(1<<PTD15))				/* Red LED bitmask */
+#define LED_GREEN	((uint32_t)(1<<PTD16))				/* Green LED bitmask */
+#define LED_BLUE 	((uint32_t)(1<<PTD0))				/* Blue LED bitmask */
 
 
 typedef struct {
@@ -79,9 +85,8 @@ typedef struct {
 #define PCC_ENABLE_PORT_MASK		(1u << 30)
 
 /*********** PCR - Port Control Register *******************/
-#define PCR_PORT_C		((uint32_t *)(0x4004B000))	/* PCC PORT C address */
 #define PCR_PORT_D		((uint32_t *)(0x4004C000))	/* PCC PORT D address */
-
+#define PCR_PORT_C		((uint32_t *)(0x4004B000))	/* PCC PORT C address */
 
 
 #define PCR_GPIO_MODE_MASK		(1 << 8)
