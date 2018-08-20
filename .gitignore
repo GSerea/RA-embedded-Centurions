@@ -14,7 +14,7 @@ Projects/RemoteSystemsTempFiles
 Projects/**/.project
 Projects/**/.cproject
 Projects/**/.settings
-**/.settings
+language.settings.xml
 
 # Generic type follow below
 
