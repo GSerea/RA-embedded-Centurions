@@ -37,13 +37,13 @@ typedef struct {
 
 /***************************************** GPIO related *****************************************/
 
-#define GPIO_BASE 	(0x400FF000)   		/* GPIO base address */
+#define GPIO_BASE 	(0x400FF000u)   		/* GPIO base address */
 
-#define PORT_A		((uint32_t *)(GPIO_BASE + 0x00))	/* PORT A address */
-#define PORT_B		((uint32_t *)(GPIO_BASE + 0x40))	/* PORT B address */
-#define PORT_C		((uint32_t *)(GPIO_BASE + 0x80))	/* PORT C address */
-#define PORT_D		((uint32_t *)(GPIO_BASE + 0xC0))	/* PORT D address */
-#define PORT_E		((uint32_t *)(GPIO_BASE + 0x100))	/* PORT E address */
+#define PORT_A		((uint32_t *)(GPIO_BASE + 0x00u))	/* PORT A address */
+#define PORT_B		((uint32_t *)(GPIO_BASE + 0x40u))	/* PORT B address */
+#define PORT_C		((uint32_t *)(GPIO_BASE + 0x80u))	/* PORT C address */
+#define PORT_D		((uint32_t *)(GPIO_BASE + 0xC0u))	/* PORT D address */
+#define PORT_E		((uint32_t *)(GPIO_BASE + 0x100u))	/* PORT E address */
 
 
 
@@ -85,8 +85,8 @@ typedef struct {
 #define PCC_ENABLE_PORT_MASK		(1u << 30)
 
 /***************************************** PCR - Port Control Register *****************************************/
-#define PCR_PORT_C		((uint32_t *)(0x4004B000))	/* PCC PORT C address */
-#define PCR_PORT_D		((uint32_t *)(0x4004C000))	/* PCC PORT D address */
+#define PCR_PORT_C		((uint32_t *)(0x4004B000u))	/* PCC PORT C address */
+#define PCR_PORT_D		((uint32_t *)(0x4004C000u))	/* PCC PORT D address */
 
 #define PCR_GPIO_MODE_MASK		(1 << 8)
 
