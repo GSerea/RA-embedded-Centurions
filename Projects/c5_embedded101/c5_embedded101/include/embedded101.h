@@ -73,7 +73,7 @@ typedef struct {
 
 
 
-/*********** PCC *******************/
+/***************************************** PCC *****************************************/
 #define PCC_BASE 		(0x40065000u)   		/* PCC base address */
 
 #define PCC_PORT_A		((uint32_t *)(PCC_BASE + 0x124u))	/* PCC PORT A address */
@@ -84,25 +84,11 @@ typedef struct {
 
 #define PCC_ENABLE_PORT_MASK		(1u << 30)
 
-/*********** PCR - Port Control Register *******************/
+/***************************************** PCR - Port Control Register *****************************************/
 #define PCR_PORT_C		((uint32_t *)(0x4004B000))	/* PCC PORT C address */
 #define PCR_PORT_D		((uint32_t *)(0x4004C000))	/* PCC PORT D address */
 
-
-
 #define PCR_GPIO_MODE_MASK		(1 << 8)
-
-/*********** PCC *******************/
-
-
-
-
-
-
-
-
-
-
 
 
 
